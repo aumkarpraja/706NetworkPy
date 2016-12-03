@@ -14,10 +14,12 @@ file = open('index','rb')
 conn, addr = sock.accept()
 print 'Connection addresses: ', addr
 
+
+
 while 1:
     data = conn.recv(BUFFER_SIZE)
     if not data: break
-    if data='get':
+    if data='GET':
         print 'Sending..'
         data = file.read(BUFFER_SIZE)
 conn.close()
