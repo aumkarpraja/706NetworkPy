@@ -1,27 +1,21 @@
-import socket
+from flask import Flask
+from flask import render_template
+import ConfigParser
 
-TCP_IP = '127.0.0.1' #change to socket.gethostname()
-TCP_PORT = 40024 #change to 40022
 
+app = Flask(__name__)
+
+configParser = ConfigParser.RawConfigParser()
+configParser.read('config.py')
+
+HOST = configParser.get('flask-config', 'hisCinema_HOST')
+PORT = configParser.get('flask-config', 'hisCinema_PORT')
 BUFFER_SIZE = 1024
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind((TCP_IP,TCP_PORT))
-sock.listen(1)
 
-file = open('index','rb')
+@app.route("/")
+def main():
+    return render_template('index.html')
 
+if __name__ == "__main__":
 
-conn, addr = sock.accept()
-print 'Connection addresses: ', addr
-
-
-
-while 1:
-    data = conn.recv(BUFFER_SIZE)
-    if not data: break
-    if data=='GET':
-        print 'Sending..'
-        data = file.read(BUFFER_SIZE)
-        conn.send(data)
-conn.shutdown(sock.SHUT_WR)
-conn.close()
+    app.run(HOST,PORT)
