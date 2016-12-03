@@ -10,8 +10,6 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((TCP_IP, TCP_PORT))
 s.send(MESSAGE)
 
-print 'Connection addresses: ', addr
-
 # Step 2 - Wait for data
 while 1:
     data = s.recv(BUFFER_SIZE)
