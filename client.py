@@ -11,7 +11,7 @@ s.connect((TCP_IP, TCP_PORT))
 s.send(MESSAGE)
 
 print "Sending..."
-conn, addr = sock.accept()
+conn, addr = s.accept()
 print 'Connection addresses: ', addr
 
 # Step 2 - Wait for data
