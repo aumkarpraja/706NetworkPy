@@ -23,4 +23,5 @@ while 1:
         print 'Sending..'
         data = file.read(BUFFER_SIZE)
         conn.send(data)
+conn.shutdown(sock.SHUT_WR)
 conn.close()
