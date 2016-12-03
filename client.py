@@ -11,21 +11,17 @@ s.connect((TCP_IP, TCP_PORT))
 s.send(MESSAGE)
 
 print "Sending..."
+conn, addr = sock.accept()
+print 'Connection addresses: ', addr
 
 # Step 2 - Wait for data
 while 1:
-    c, addr = s.accept()     # Establish connection with client.
-    print 'Got connection from', addr
-    print "Receiving..."
-    l = c.recv(1024)
-    while (l):
+    data = conn.recv(BUFFER_SIZE)
+    while (data):
         print "Receiving..."
-        f.write(l)
-        l = c.recv(1024)
+        f.write(data)
 f.close()
-    print "Done Receiving"
-    c.send('Thank you for connecting')
-    c.close()                # Clos
-    print l
+print "Done Receiving"
+conn.close()                # Clos
+print data
 
-print "Test"
