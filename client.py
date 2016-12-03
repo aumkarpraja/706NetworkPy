@@ -14,7 +14,7 @@ print "Sending..."
 
 # Step 2 - Wait for data
 while 1:
-	c, addr = s.accept()     # Establish connection with client.
+    c, addr = s.accept()     # Establish connection with client.
     print 'Got connection from', addr
     print "Receiving..."
     l = c.recv(1024)
@@ -22,7 +22,7 @@ while 1:
         print "Receiving..."
         f.write(l)
         l = c.recv(1024)
-    f.close()
+f.close()
     print "Done Receiving"
     c.send('Thank you for connecting')
     c.close()                # Clos
