@@ -10,18 +10,16 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((TCP_IP, TCP_PORT))
 s.send(MESSAGE)
 
-print "Sending..."
-conn, addr = s.accept()
 print 'Connection addresses: ', addr
 
 # Step 2 - Wait for data
 while 1:
-    data = conn.recv(BUFFER_SIZE)
+    data = s.recv(BUFFER_SIZE)
     while (data):
         print "Receiving..."
         f.write(data)
 f.close()
 print "Done Receiving"
-conn.close()                # Clos
+s.close()                # Clos
 print data
 
