@@ -38,7 +38,7 @@ sock.close()
 print "[DEBUG] Socket closed. again. Recived message from hisCinemaDNS"
 
 print "[DEBUG] Contacting herCDNDNS"
-UDP_PORT = 40022
+UDP_PORT = 40028
 sock = socket(AF_INET, SOCK_DGRAM) # UDP
 sock.sendto("Hello", (UDP_IP, UDP_PORT))
 print "[DEBUG] Waiting for IP of herCDN"
