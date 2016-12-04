@@ -22,8 +22,8 @@ UDP_PORT = 40021
 sock = socket(AF_INET, SOCK_DGRAM) # UDP
 sock.sendto("{" + videoNum + ", V}", (UDP_IP, UDP_PORT))
 print "[DEBUG] V flag sent to hisCinemaDNS"
-sock.close()
-print "[DEBUG] Socket closed. again."
+
+
 
 UDP_PORT = 40020
 sock = socket(AF_INET, SOCK_DGRAM) # UDP
@@ -36,6 +36,7 @@ while True:
     break;
 sock.close()
 print "[DEBUG] Socket closed. again. Recived message from hisCinemaDNS"
+
 print "[DEBUG] Contacting herCDNDNS"
 UDP_PORT = 40022
 sock = socket(AF_INET, SOCK_DGRAM) # UDP
@@ -45,9 +46,9 @@ while True:
     IPaddher, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
     print "received IP herCDN:", IPaddher
     break;
+    
 print "[DEBUG] Sending video info to client."
 UDP_PORT = 40027
-sock = socket(AF_INET, # Internet
-                     SOCK_DGRAM) # UD
+sock = socket(AF_INET,SOCK_DGRAM) 
 sock.sendto(videoNum, (UDP_IP, UDP_PORT))
 sock.close()

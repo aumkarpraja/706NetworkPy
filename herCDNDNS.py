@@ -11,7 +11,7 @@ sock.bind((UDP_IP, UDP_PORT))
 
 while True:
     data, addr = sock.recvfrom(BUFFER_SIZE)
-    print '[Recieved] ', data
+    print '[RESPONSE] ', data
     if not data: break
     sock.sendto(Msg,addr)
 sock.close

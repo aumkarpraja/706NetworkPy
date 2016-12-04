@@ -11,6 +11,7 @@ sock = socket(AF_INET, SOCK_STREAM)
 sock.bind((TCP_IP,TCP_PORT))
 sock.listen(1)
 while True:
+    print "[DEBUG] CDN idling."
     conn, addr = sock.accept()
     data = conn.recv(BUFFER_SIZE)
     if data == '1':

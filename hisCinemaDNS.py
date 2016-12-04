@@ -1,4 +1,5 @@
 from socket import *
+import time
 
 def response(num):
 # Set up route to Client -> LocalDNS
@@ -18,6 +19,7 @@ def response2():
 	sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 	sock.bind((UDP_IP, UDP_PORT))
 	print "[DEBUG] Waiting for V record from clientDNS"
+
 	while True:
 	    data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
 	    print "received message:", data
