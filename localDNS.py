@@ -33,8 +33,8 @@ sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 sock.bind((UDP_IP, UDP_PORT))
 print "[DEBUG] Waiting for IP of herCDNDNS"
 while True:
-    data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
-    print "received message:", data
+    IPadd, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
+    print "received IP:", IPadd
     break;
 sock.close()
 print "[DEBUG] Socket closed. again. Recived message from hisCinemaDNS"
