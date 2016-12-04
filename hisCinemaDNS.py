@@ -7,7 +7,7 @@ def response(num):
 	MESSAGE = num
 	print "[DEBUG] Sending message to localDNS of video selected."
 	# Create socket and send through socket, close after
-	sock = socket(AF_INET, SOCK_DGRAM) # UDP	
+	sock = socket(AF_INET, SOCK_DGRAM) # UDP
 	sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
 	sock.close()
 	print "[DEBUG] hisCinemaDNS idle. Closing."
@@ -21,5 +21,5 @@ def response2():
 	while True:
 	    data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
 	    print "received message:", data
-	    break;
+	    break
 	#now send IP
