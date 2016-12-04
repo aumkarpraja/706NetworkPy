@@ -24,6 +24,7 @@ def response2():
 	    print "received message:", data
 	    break;
 	sock.close()
+	# Relay IP now of Auth DNS of herCDNDNS
 	print "[DEBUG] Now relaying IP of herCDNDNS to clientDNS"
 	UDP_IP = "127.0.0.1" # IP of client DNS here
 	UDP_PORT = 40020
