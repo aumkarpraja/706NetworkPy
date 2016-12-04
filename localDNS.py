@@ -26,7 +26,6 @@ print "[DEBUG] V flag sent to hisCinemaDNS"
 sock.close()
 print "[DEBUG] Socket closed. again."
 
-UDP_IP = "127.0.0.1" #ip of clientDNS here 
 UDP_PORT = 40020
 sock = socket(AF_INET, SOCK_DGRAM) # UDP
 sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)

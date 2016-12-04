@@ -26,7 +26,6 @@ def response2():
 	sock.close()
 	# Relay IP now of Auth DNS of herCDNDNS
 	print "[DEBUG] Now relaying IP of herCDNDNS to clientDNS"
-	UDP_IP = "127.0.0.1" # IP of client DNS here
 	UDP_PORT = 40020
 	IP_HERCDNDNS = "127.0.0.1" # IP of herCDN DNS here
 	sock = socket(AF_INET, SOCK_DGRAM) # UDP
