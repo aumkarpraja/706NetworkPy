@@ -23,11 +23,10 @@ def main():
 def number(num):
 	print "[DEBUG] Getting response from hisCinemaDNS"
 	hisCinemaDNS.response(num);
-	sendIP()
-	# Return message not really needed but it should be downloading from here
+	sendIP(num)
 	return "Now downloading file: " + num + ".mp4"
 
-def sendIP():
+def sendIP(num):
 	hisCinemaDNS.response2()
 	return "Now downloading file: " + num + ".mp4"
 

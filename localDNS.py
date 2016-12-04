@@ -1,9 +1,10 @@
-import socket
+from socket import *
 
 UDP_IP = "127.0.0.1"
 UDP_PORT = 40020
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
+sock = socket(AF_INET, SOCK_DGRAM) 
+sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 sock.bind((UDP_IP, UDP_PORT))
 
 videoNum = ""
@@ -17,8 +18,9 @@ while True:
 	
 print "[DEBUG] Socket closed."
 sock.close()
-	
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # UDP
+
+UDP_PORT = 40021
+sock = socket(AF_INET, SOCK_DGRAM) # UDP
 sock.sendto("V: " + videoNum, (UDP_IP, UDP_PORT))
 print "[DEBUG] V flag sent to hisCinemaDNS"
 
