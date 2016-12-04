@@ -11,7 +11,7 @@ while True:
     sock.bind((UDP_IP, UDP_PORT))
 
 
-
+    print "[DEBUG] localDNS idling."
     # Wait for response from DNS
     while True:
         videoNum, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
@@ -40,7 +40,7 @@ while True:
     print "[DEBUG] Socket closed. again. Recived message from hisCinemaDNS"
 
     print "[DEBUG] Contacting herCDNDNS"
-    UDP_PORT = 40022
+    UDP_PORT = 40028
     sock = socket(AF_INET, SOCK_DGRAM) # UDP
     sock.sendto("Hello", (UDP_IP, UDP_PORT))
     print "[DEBUG] Waiting for IP of herCDN"
@@ -48,6 +48,7 @@ while True:
         IPaddher, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
         print "received IP herCDN:", IPaddher
         break;
+
 
     print "[DEBUG] Sending video info to client."
     UDP_PORT = 40027

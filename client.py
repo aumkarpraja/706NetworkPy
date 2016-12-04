@@ -5,7 +5,7 @@ UDP_IP = '127.0.0.1'
 UDP_PORT = 40027
 lDNSdata = ""
 while True:
-	print "[DEBUG] Awaiting localDNS to send response"
+	print "[DEBUG] Idling."
 	sock = socket(AF_INET, SOCK_DGRAM) # UDP
 	sock.bind((UDP_IP, UDP_PORT))
 	while True:
