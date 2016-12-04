@@ -15,7 +15,6 @@ while True:
     print "Selected: ", videoNum
     break;
 
-	
 print "[DEBUG] Socket closed."
 sock.close()
 
