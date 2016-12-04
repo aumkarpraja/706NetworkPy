@@ -45,3 +45,9 @@ while True:
     IPaddher, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
     print "received IP herCDN:", IPaddher
     break;
+print "[DEBUG] Sending video info to client."
+UDP_PORT = 40027
+sock = socket(AF_INET, # Internet
+                     SOCK_DGRAM) # UD
+sock.sendto(videoNum, (UDP_IP, UDP_PORT))
+sock.close()

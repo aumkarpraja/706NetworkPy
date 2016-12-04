@@ -9,8 +9,7 @@ def response(num):
 	# Create socket and send through socket, close after
 	sock = socket(AF_INET, SOCK_DGRAM) # UDP	
 	sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
-	sock.close()
-	print "[DEBUG] hisCinemaDNS idle. Closing."
+	
 
 def response2():
 	UDP_IP = "127.0.0.1" #ip of clientDNS here 
